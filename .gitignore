@@ -38,9 +38,6 @@ Temporary Items
 # Built Visual Studio Code Extensions
 *.vsix
 
-# compiled go binaries
-bin/service
-
 # keep gitkeep files
 !.gitkeep
 
@@ -54,4 +51,7 @@ tmp/
 
 # gdb history
 .gdb_history
+
+# built Files
+bin/*
 
