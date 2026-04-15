@@ -42,7 +42,6 @@ _start:
     mov r12, rax ; store fd number
 
     xor r13, r13 ; file bytes
-
 .main_loop:
     mov rdi, r12
     call read_to_buffer
@@ -55,7 +54,6 @@ _start:
     add r13, rax
     jmp .main_loop
 .main_loop_done:
-
     mov rdi, r13
     mov rsi, bytes_count_string
     call itoa
@@ -134,7 +132,6 @@ itoa:
     mov r13, rdi
     lea rbx, [rsi+max_int_itoa_len] ; start from the end
     xor rcx, rcx ; length = 0
-
 .loop:
     cmp r13, 0
     je .loop_done
@@ -152,7 +149,6 @@ itoa:
     mov r13, rax
 
     jmp .loop
-
 .loop_done:
     cmp rcx, 0
     jne .done
@@ -161,7 +157,6 @@ itoa:
     dec rbx
     mov byte [rbx], '0'
     mov rcx, 1
-
 .done:
     mov rax, rcx
     ret
